@@ -1,10 +1,11 @@
 import mysql from 'mysql2'
-
+import dotenv from 'dotenv'
+dotenv.config()
 const DB = mysql.createConnection({
-    host : "localhost",
-    user :"root",
-    password : "Fv!7uX#nR@4eWz8GqLp$T1bE",
-    database : "blog"
+    host : process.env.DB_LOCALHOST,
+    user :process.env.DB_USER,
+    password : process.env.DB_PASSWORD,
+    database : process.env.DB_DATABASE 
 }) 
 
 DB.connect((err) => {

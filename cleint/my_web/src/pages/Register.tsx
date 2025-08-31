@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 type user = {
   username: string;
   email: string;
@@ -12,6 +13,10 @@ function Register() {
     password: "",
   });
 
+  const navigate = useNavigate()
+
+  const [Err, setErr] = useState<string>("");
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
@@ -22,9 +27,9 @@ function Register() {
       });
 
       const data = await response.json();
-      console.log(data);
-    } catch (error) {
-      alert(error);
+      navigate('/Login')
+    } catch (error: any) {
+      setErr(error);
     }
   };
   return (
@@ -64,7 +69,7 @@ function Register() {
         >
           Register
         </button>
-        <p className="text-red-500 text-center">There's a error</p>
+        {Err && <p className="text-red-500 text-center">{Err}</p>}
         <span className="text-center">
           Don't you have an account?{" "}
           <Link to={"/Login"} className="underline text-blue-600">
