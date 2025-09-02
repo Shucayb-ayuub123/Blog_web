@@ -22,13 +22,13 @@ const Navbar = () => {
         <Link className="font-light text-xl" to={"/?cat=ART"}>
           ART
         </Link>
-        <Link className="font-light text-xl" to={"/?cat=sceince"}>
+        <Link className="font-light text-xl" to={"/?cat=science"}>
           Sceince
         </Link>
         <Link className="font-light text-xl" to={"/?cat=technology"}>
           Technology
         </Link>
-        <Link className="font-light text-xl" to={"/?cat=cineme"}>
+        <Link className="font-light text-xl" to={"/?cat=cinema"}>
           Cinema
         </Link>
         <Link className="font-light text-xl" to={"/?cat=food"}>

@@ -20,9 +20,7 @@ type AuthContextType = {
 type AuthProviderProps = {
   children: ReactNode;
 };
-export const AuthContext = createContext<AuthContextType | undefined>(
-  undefined
-);
+export const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
 export const AuthContextProvider = ({ children }: AuthProviderProps) => {
   const getStoredUser = (): User => {
